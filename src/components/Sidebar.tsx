@@ -44,10 +44,8 @@ export default function Sidebar({ username, mobileOpen = false, onClose }: { use
           "fixed left-0 top-0 h-full w-56 bg-lc-surface border-r border-lc-border flex flex-col z-30",
           "hidden md:flex",
           mobileOpen ? "flex animate-slide-in" : ""
-        )
-      }
-      style={mobileOpen ? { display: "flex" } : undefined}
-    >
+        );
+    }
       {/* Mobile close button */}
       {mobileOpen && (
         <button

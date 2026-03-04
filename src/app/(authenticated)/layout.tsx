@@ -2,6 +2,7 @@ import { redirect } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
 import { ensureUserProfile } from "@/lib/supabase/ensure-profile";
 import Sidebar from "@/components/Sidebar";
+import AppShell from "@/components/AppShell";
 
 export default async function AppLayout({
   children,
