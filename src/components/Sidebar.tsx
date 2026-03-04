@@ -54,8 +54,32 @@ export default function Sidebar({ username }: { username: string }) {
     return () => { mounted = false };
   }, [supabase]);
 
+  // Mobile drawer support
+  const mobileOpen = typeof window !== "undefined" && (window as any).sidebarOpen;
+  const onClose = typeof window !== "undefined" && (window as any).onSidebarClose;
+
   return (
-    <aside className="fixed left-0 top-0 h-full w-56 bg-lc-surface border-r border-lc-border flex flex-col z-30 hidden md:flex">
+    <aside
+      className={
+        cn(
+          "fixed left-0 top-0 h-full w-56 bg-lc-surface border-r border-lc-border flex flex-col z-30",
+          "hidden md:flex",
+          mobileOpen ? "flex animate-slide-in" : ""
+        )
+      }
+      style={mobileOpen ? { display: "flex" } : undefined}
+    >
+      {/* Mobile close button */}
+      {mobileOpen && (
+        <button
+          className="absolute top-4 right-4 z-40 p-2 rounded-lg bg-lc-card border border-lc-border md:hidden"
+          aria-label="Close sidebar"
+          onClick={onClose}
+        >
+          <span className="block w-6 h-0.5 bg-lc-text rotate-45 mb-1" />
+          <span className="block w-6 h-0.5 bg-lc-text -rotate-45" />
+        </button>
+      )}
       {/* Logo */}
       <div className="px-4 py-5 border-b border-lc-border">
         <Link href="/dashboard" className="flex items-center gap-2">
