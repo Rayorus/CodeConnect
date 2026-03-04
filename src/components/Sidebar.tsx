@@ -108,6 +108,4 @@ export default function Sidebar({ username, mobileOpen = false, onClose }: { use
       </div>
     </aside>
     );
-    // ...existing code...
-  }
 }
