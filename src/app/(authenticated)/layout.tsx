@@ -1,4 +1,3 @@
-"use client";
 import { redirect } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
 import { ensureUserProfile } from "@/lib/supabase/ensure-profile";
@@ -32,9 +31,6 @@ export default async function AppLayout({
     .eq("id", user.id)
     .single();
 
-  // Mobile sidebar state
-  // @ts-ignore
-  const [sidebarOpen, setSidebarOpen] = useState(false);
 
     return (
       <AppShell username={profile?.username || user.email?.split("@")[0] || "user"}>
