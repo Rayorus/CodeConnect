@@ -55,7 +55,7 @@ export default function Sidebar({ username }: { username: string }) {
   }, [supabase]);
 
   return (
-    <aside className="fixed left-0 top-0 h-full w-56 bg-lc-surface border-r border-lc-border flex flex-col z-30">
+    <aside className="fixed left-0 top-0 h-full w-56 bg-lc-surface border-r border-lc-border flex flex-col z-30 hidden md:flex">
       {/* Logo */}
       <div className="px-4 py-5 border-b border-lc-border">
         <Link href="/dashboard" className="flex items-center gap-2">

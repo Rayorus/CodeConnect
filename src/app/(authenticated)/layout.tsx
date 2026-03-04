@@ -32,7 +32,7 @@ export default async function AppLayout({
 
   return (
     <div className="flex h-screen overflow-hidden w-full">
-      <Sidebar username={profile?.username || user.email?.split("@")[0] || "user"} className="hidden md:block" />
+      <Sidebar username={profile?.username || user.email?.split("@")[0] || "user"} />
       <main className="flex-1 w-full md:ml-56 overflow-y-auto bg-lc-bg px-4">
         {children}
       </main>
